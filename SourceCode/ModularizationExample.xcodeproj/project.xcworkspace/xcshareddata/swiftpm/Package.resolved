@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Coordinator",
+        "repositoryURL": "https://github.com/ipedro/Coordinator",
+        "state": {
+          "branch": "main",
+          "revision": "1f318d9211ce3f75e83f39cdedeb1d44b7701ce7",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
