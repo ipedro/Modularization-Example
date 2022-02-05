@@ -1,22 +1,40 @@
-//
-//  SceneDelegate.swift
-//  ModularizedHelloFresh
-//
-//  Created by Pedro on 04.02.22.
-//
-
 import UIKit
+import SharedCode
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+enum BuildConfiguration {
+    case debug, release
+}
 
-    var window: UIWindow?
+final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    var appCoordinator: AppCoordinator? {
+        didSet {
+            appCoordinator?.start()
+        }
+    }
 
+    let tabBarFeatures: [TabBarFeature] = [.home, .myMenu, .share, .inbox, .settings]
+
+    var window: UIWindow? {
+        didSet {
+            guard let window = window else {
+                appCoordinator = nil
+                return
+            }
+            appCoordinator = AppCoordinator(
+                window: window,
+                dependencies: .init(
+                    authenticatedUser: .none,
+                    customerTabBarFeatures: [.home, .myMenu, .share, .inbox, .settings],
+                    guestTabBarFeatures: [.boxSettings, .discover, .news, .settings],
+                    recipes: Recipe.allCases
+                )
+            )
+        }
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: windowScene)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  ModularizedHelloFresh
-//
-//  Created by Pedro on 04.02.22.
-//
-
 import UIKit
 
 @main
