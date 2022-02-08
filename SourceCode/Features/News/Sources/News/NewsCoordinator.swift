@@ -1,9 +1,7 @@
 import Shared
 
-public protocol NewsCoordinatorDelegate: CoordinatorDismissing {}
+public protocol NewsCoordinatorDelegate: AnyObject {}
 
-public final class NewsCoordinator: BaseFeatureCoordinator {
-    public weak var delegate: NewsCoordinatorDelegate? {
-        didSet { dismissDelegate = delegate }
-    }
+public final class NewsCoordinator: FeatureCoordinator<Void> {
+    public weak var delegate: NewsCoordinatorDelegate?
 }

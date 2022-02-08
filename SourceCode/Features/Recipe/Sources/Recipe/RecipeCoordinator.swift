@@ -2,31 +2,21 @@ import Coordinator
 import Shared
 import UIKit
 
-public protocol RecipeCoordinatorDelegate: CoordinatorDismissing {}
+public protocol RecipeCoordinatorDelegate: AnyObject {}
 
-public final class RecipeCoordinator: BaseFeatureCoordinator {
-    public struct Dependencies {
-        let recipe: Recipe
+public struct RecipeDependencies {
+    public var recipe: Recipe
 
-        public init(recipe: Recipe) {
-            self.recipe = recipe
-        }
+    public init(recipe: Recipe) {
+        self.recipe = recipe
     }
+}
 
-    let dependencies: Dependencies
+public final class RecipeCoordinator: FeatureCoordinator<RecipeDependencies> {
+    public weak var delegate: RecipeCoordinatorDelegate?
 
-    public weak var delegate: RecipeCoordinatorDelegate? {
-        didSet { dismissDelegate = delegate }
-    }
-
-    public init(navigationController: UINavigationController,
-                dependencies: Dependencies)
-    {
-        self.dependencies = dependencies
-        super.init(navigationController: navigationController)
-    }
-
-    override public func willStart() {
+    override public func loadContent() -> ViewController {
         featureViewController.addText(dependencies.recipe.title, .body, .label)
+        return featureViewController
     }
 }

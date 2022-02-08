@@ -1,65 +1,28 @@
-import AlertPresenting
+import AlertPresentable
 import CoordinatorAPI
 import Shared
 import UIKit
 
-public protocol SettingsCoordinatorDelegate: CoordinatorDismissing {
-    func settingsCoordinator(_ coordinator: SettingsCoordinator,
-                             didTapLoginFrom presentingNavigationController: UINavigationController)
+public protocol SettingsCoordinatorDelegate: AnyObject {}
 
-    func settingsCoordinator(_ coordinator: SettingsCoordinator,
-                             didTapLogoutFrom presentingNavigationController: UINavigationController)
+public struct SettingsDependencies {
+    public var authenticatedUser: AuthenticatedUser?
+    public var settings: [UIAction]
+
+    public init(authenticatedUser: AuthenticatedUser?,
+                settings: [UIAction])
+    {
+        self.authenticatedUser = authenticatedUser
+        self.settings = settings
+    }
 }
 
-public final class SettingsCoordinator: BaseFeatureCoordinator, AlertPresenting {
-    public struct Dependencies {
-        public var authenticatedUser: AuthenticatedUser?
-
-        public init(authenticatedUser: AuthenticatedUser?) {
-            self.authenticatedUser = authenticatedUser
-        }
-    }
-
-    let dependencies: Dependencies
-
-    public weak var delegate: SettingsCoordinatorDelegate? {
-        didSet { dismissDelegate = delegate }
-    }
-
-    public init(navigationController: UINavigationController,
-                dependencies: Dependencies)
-    {
-        self.dependencies = dependencies
-        super.init(navigationController: navigationController)
-    }
-
-    override public func willStart() {
+public final class SettingsCoordinator: FeatureCoordinator<SettingsDependencies>, AlertPresentable {
+    override public func loadContent() -> ViewController {
         featureViewController.title = "\(dependencies.authenticatedUser?.firstName == .none ? "" : "\(dependencies.authenticatedUser!.firstName)'s ")\(type(of: self))"
-        guard let authenticatedUser = dependencies.authenticatedUser else {
-            return featureViewController.addAction(
-                .init(title: "Sign In...") { [weak self] _ in
-                    guard let self = self else { return }
-                    self.delegate?.settingsCoordinator(self, didTapLoginFrom: self.navigationController)
-                }
-            )
-        }
-
-        featureViewController.addAction(
-            .init(title: "Sign Out...") { [weak self] _ in
-                guard let self = self else { return }
-
-                self.presentAlert(
-                    from: self.navigationController,
-                    title: "Sign out from \(authenticatedUser.firstName)'s profile?",
-                    message: "\(self.allParentsDescription) > AlertCoordinator",
-                    actions: [
-                        .init(title: "Sign Out", style: .default) { [weak self] _ in
-                            guard let self = self else { return }
-                            self.delegate?.settingsCoordinator(self, didTapLogoutFrom: self.navigationController)
-                        },
-                    ]
-                )
-            }
-        )
+        featureViewController.addSpacer()
+        featureViewController.addDivider()
+        dependencies.settings.forEach { featureViewController.addAction($0) }
+        return featureViewController
     }
 }

@@ -2,32 +2,29 @@
 import PackageDescription
 
 let package = Package(
-    name: "Settings",
+    name: "AlertPresentable",
     platforms: [.iOS(.v15)],
     products: [
         .library(
-            name: "Settings",
-            targets: ["Settings"]
+            name: "AlertPresentable",
+            targets: ["AlertPresentable"]
         ),
     ],
     dependencies: [
-        .package(name: "Shared", path: "../Support/Shared"),
-        .package(name: "AlertPresentable", path: "../Support/AlertPresentable"),
+        .package(name: "Shared", path: "../Shared"),
     ],
     targets: [
         .target(
-            name: "Settings",
+            name: "AlertPresentable",
             dependencies: [
                 "Shared",
-                "AlertPresentable",
             ]
         ),
         .testTarget(
-            name: "SettingsTests",
+            name: "AlertPresentableTests",
             dependencies: [
-                "Settings",
-                "Shared",
                 "AlertPresentable",
+                "Shared",
             ]
         ),
     ]

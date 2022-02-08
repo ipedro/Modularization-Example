@@ -2,66 +2,60 @@ import CoordinatorAPI
 import Shared
 import UIKit
 
-public protocol HomeCoordinatorDelegate: CoordinatorDismissing {
+public protocol HomeCoordinatorDelegate: AnyObject {
     func homeViewCooordinator(_ coordinator: HomeCoordinator,
-                              didTapPresentModallyFrom presentingNavigationController: UINavigationController)
+                              didTapPresentModallyFrom presenter: UINavigationController)
 
     func homeViewCooordinator(_ coordinator: HomeCoordinator,
-                              didTapPushFrom presentingNavigationController: UINavigationController)
+                              didTapPushFrom presenter: UINavigationController)
 
     func homeViewCooordinator(_ coordinator: HomeCoordinator,
-                              didTapSwitchToTabFrom presentingNavigationController: UINavigationController)
+                              didTapSwitchToTabFrom presenter: UINavigationController)
 
     func homeViewCooordinator(_ coordinator: HomeCoordinator,
-                              didTapEmbedFrom presentingNavigationController: UINavigationController)
+                              didTapEmbedFrom presenter: UINavigationController)
 
     func homeViewCooordinator(_ coordinator: HomeCoordinator,
-                              didTapAddTabBarFeatureFrom presentingNavigationController: UINavigationController)
+                              didRequestAddTabBarFeatureFrom presenter: UINavigationController)
 
     func homeViewCooordinator(_ coordinator: HomeCoordinator,
-                              didTapRemoveTabBarFeatureFrom presentingNavigationController: UINavigationController)
+                              didRequestRemoveTabBarFeatureFrom presenter: UINavigationController)
 
     func homeViewCooordinator(_ coordinator: HomeCoordinator,
-                              didTapOpenNewWindowFrom presentingNavigationController: UINavigationController)
+                              didTapOpenNewWindowFrom presenter: UINavigationController)
 }
 
-public final class HomeCoordinator: BaseFeatureCoordinator {
-    public struct Dependencies {
-        public var authenticatedUser: AuthenticatedUser
+public struct HomeDependencies {
+    public var authenticatedUser: AuthenticatedUser
 
-        public init(authenticatedUser: AuthenticatedUser) {
-            self.authenticatedUser = authenticatedUser
-        }
+    public init(authenticatedUser: AuthenticatedUser) {
+        self.authenticatedUser = authenticatedUser
     }
+}
 
-    let dependencies: Dependencies
+public final class HomeCoordinator: FeatureCoordinator<HomeDependencies> {
+    public weak var delegate: HomeCoordinatorDelegate?
 
-    public init(navigationController: UINavigationController,
-                dependencies: Dependencies)
-    {
-        self.dependencies = dependencies
-        super.init(navigationController: navigationController)
-    }
-
-    override public func willStart() {
+    override public func loadContent() -> ViewController {
         featureViewController.addAction(
             UIAction(title: "New Window") { [weak self] _ in
                 guard let self = self else { return }
-                self.delegate?.homeViewCooordinator(self, didTapOpenNewWindowFrom: self.navigationController)
+                self.delegate?.homeViewCooordinator(self, didTapOpenNewWindowFrom: self.presentingNavigationController)
             }
         )
+
         featureViewController.addSpacer()
 
         featureViewController.addAction(
             .init(title: "Add Tab Bar Item...") { [weak self] _ in
                 guard let self = self else { return }
-                self.delegate?.homeViewCooordinator(self, didTapAddTabBarFeatureFrom: self.navigationController)
+                self.delegate?.homeViewCooordinator(self, didRequestAddTabBarFeatureFrom: self.presentingNavigationController)
             }
         )
         featureViewController.addAction(
             .init(title: "Remove Tab Bar Item...") { [weak self] _ in
                 guard let self = self else { return }
-                self.delegate?.homeViewCooordinator(self, didTapRemoveTabBarFeatureFrom: self.navigationController)
+                self.delegate?.homeViewCooordinator(self, didRequestRemoveTabBarFeatureFrom: self.presentingNavigationController)
             }
         )
 
@@ -70,30 +64,28 @@ public final class HomeCoordinator: BaseFeatureCoordinator {
         featureViewController.addAction(
             UIAction(title: "Switch To...") { [weak self] _ in
                 guard let self = self else { return }
-                self.delegate?.homeViewCooordinator(self, didTapSwitchToTabFrom: self.navigationController)
+                self.delegate?.homeViewCooordinator(self, didTapSwitchToTabFrom: self.presentingNavigationController)
             }
         )
         featureViewController.addAction(
             UIAction(title: "Push...") { [weak self] _ in
                 guard let self = self else { return }
-                self.delegate?.homeViewCooordinator(self, didTapPushFrom: self.navigationController)
+                self.delegate?.homeViewCooordinator(self, didTapPushFrom: self.presentingNavigationController)
             }
         )
         featureViewController.addAction(
             UIAction(title: "Present...") { [weak self] _ in
                 guard let self = self else { return }
-                self.delegate?.homeViewCooordinator(self, didTapPresentModallyFrom: self.navigationController)
+                self.delegate?.homeViewCooordinator(self, didTapPresentModallyFrom: self.presentingNavigationController)
             }
         )
         featureViewController.addAction(
             UIAction(title: "Embed...") { [weak self] _ in
                 guard let self = self else { return }
-                self.delegate?.homeViewCooordinator(self, didTapEmbedFrom: self.navigationController)
+                self.delegate?.homeViewCooordinator(self, didTapEmbedFrom: self.presentingNavigationController)
             }
         )
-    }
 
-    public weak var delegate: HomeCoordinatorDelegate? {
-        didSet { dismissDelegate = delegate }
+        return featureViewController
     }
 }

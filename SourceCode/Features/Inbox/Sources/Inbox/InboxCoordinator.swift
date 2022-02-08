@@ -1,34 +1,24 @@
 import Shared
 import UIKit
 
-public protocol InboxCoordinatorDelegate: CoordinatorDismissing {}
+public protocol InboxCoordinatorDelegate: AnyObject {}
 
-public final class InboxCoordinator: BaseFeatureCoordinator {
-    public struct Dependencies {
-        public var messages: [Message]
+public struct InboxDependencies {
+    public var messages: [Message]
 
-        public init(messages: [Message]) {
-            self.messages = messages
-        }
+    public init(messages: [Message]) {
+        self.messages = messages
     }
+}
 
-    let dependencies: Dependencies
-
-    public init(navigationController: UINavigationController,
-                dependencies: Dependencies)
-    {
-        self.dependencies = dependencies
-        super.init(navigationController: navigationController)
-    }
-
-    override public func willStart() {
+public final class InboxCoordinator: FeatureCoordinator<InboxDependencies> {
+    override public func loadContent() -> ViewController {
         dependencies.messages.forEach { message in
             featureViewController.addText("✉️ \"\(message.rawValue)\"", .callout)
             featureViewController.addDivider()
         }
+        return featureViewController
     }
 
-    public weak var delegate: InboxCoordinatorDelegate? {
-        didSet { dismissDelegate = delegate }
-    }
+    public weak var delegate: InboxCoordinatorDelegate?
 }

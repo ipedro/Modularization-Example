@@ -3,8 +3,8 @@ import CoordinatorAPI
 import Shared
 import UIKit
 
-public protocol AuthenticationPresenting: CoordinatorDismissing {
-    func presentAuthentication(from presentingNavigationController: UINavigationController,
+public protocol AuthenticationPresentable: CoordinatorProtocol {
+    func presentAuthentication(from presenter: UIViewController,
                                animated: Bool,
                                completion: (() -> Void)?)
 
@@ -12,15 +12,16 @@ public protocol AuthenticationPresenting: CoordinatorDismissing {
                                    didAuthenticatedUser authenticatedUser: AuthenticatedUser)
 }
 
-public extension AuthenticationPresenting {
-    func presentAuthentication(from presentingNavigationController: UINavigationController,
+public extension AuthenticationPresentable {
+    func presentAuthentication(from presenter: UIViewController,
                                animated: Bool = true,
                                completion: (() -> Void)? = .none)
     {
         let modalNavigationController = NavigationController()
         let coordinator = authenticationCoordinator(from: modalNavigationController)
         modalNavigationController.rootViewController = coordinator.start()
-        presentingNavigationController.present(
+        modalNavigationController.modalPresentationStyle = .formSheet
+        presenter.present(
             modalNavigationController,
             animated: animated,
             completion: completion
@@ -28,9 +29,12 @@ public extension AuthenticationPresenting {
     }
 }
 
-private extension AuthenticationPresenting {
-    func authenticationCoordinator(from presentingNavigationController: UINavigationController) -> AuthenticationCoordinator {
-        let authenticationCoordinator = AuthenticationCoordinator(navigationController: presentingNavigationController)
+private extension AuthenticationPresentable {
+    func authenticationCoordinator(from presenter: UINavigationController) -> AuthenticationCoordinator {
+        let authenticationCoordinator = AuthenticationCoordinator(
+            presenter: presenter,
+            dependencies: ()
+        )
         authenticationCoordinator.delegate = self
         addChild(authenticationCoordinator)
         return authenticationCoordinator

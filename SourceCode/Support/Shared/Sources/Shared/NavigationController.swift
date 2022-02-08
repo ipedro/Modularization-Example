@@ -1,16 +1,12 @@
+import Coordinator
 import UIKit
 
-open class NavigationController: UINavigationController {
-    public weak var dismissDelegate: ViewControllerDismissDelegate?
-
+open class NavigationController: DismissableNavigationController {
     public var rootViewController: UIViewController? {
         get { viewControllers.first }
         set {
-            if let newValue = newValue {
-                viewControllers = [newValue]
-            } else {
-                viewControllers = []
-            }
+            if let newValue = newValue { viewControllers = [newValue] }
+            else { viewControllers = [] }
         }
     }
 
@@ -25,24 +21,5 @@ open class NavigationController: UINavigationController {
             .font: UIFont(name: "AvenirNext-Bold", size: 15)!,
         ]
         navigationBar.prefersLargeTitles = true
-
-        if let presentationController = presentationController {
-            presentationController.delegate = presentationControllerDelegate
-        }
-    }
-
-    private lazy var presentationControllerDelegate = AdaptivePresentationControllerDelegate(
-        onDismiss: { [weak self] in
-            guard let self = self else { return }
-            self.notifyDismissDelegate()
-        }
-    )
-
-    private func notifyDismissDelegate() {
-        dismissDelegate?.viewControllerDidDismiss(self)
-
-        for case let viewController as ViewController in viewControllers {
-            viewController.dismissDelegate?.viewControllerDidDismiss(viewController)
-        }
     }
 }

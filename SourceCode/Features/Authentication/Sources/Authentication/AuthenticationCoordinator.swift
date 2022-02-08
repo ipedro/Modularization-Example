@@ -2,12 +2,10 @@ import Coordinator
 import Shared
 import UIKit
 
-final class AuthenticationCoordinator: BaseFeatureCoordinator {
-    weak var delegate: AuthenticationPresenting? {
-        didSet { dismissDelegate = delegate }
-    }
+final class AuthenticationCoordinator: FeatureCoordinator<Void> {
+    weak var delegate: AuthenticationPresentable?
 
-    override func willStart() {
+    override func loadContent() -> ViewController {
         featureViewController.addSpacer()
         AuthenticatedUser.allCases.forEach { user in
             featureViewController.addAction(
@@ -18,5 +16,6 @@ final class AuthenticationCoordinator: BaseFeatureCoordinator {
             )
             featureViewController.addDivider()
         }
+        return featureViewController
     }
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		EB1C811727B1783600147E1B /* ToastPresenting in Resources */ = {isa = PBXBuildFile; fileRef = EB1C811627B1783500147E1B /* ToastPresenting */; };
 		EB1C811927B1783E00147E1B /* ToastPresenting in Frameworks */ = {isa = PBXBuildFile; productRef = EB1C811827B1783E00147E1B /* ToastPresenting */; };
-		EB2ED53927AEFDC60097BA4D /* TabBarFeaturesCoordinator+CoordinatorDismissDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2ED53827AEFDC50097BA4D /* TabBarFeaturesCoordinator+CoordinatorDismissDelegate.swift */; };
 		EB4AB07427AE149C003EFFBD /* TabBarFeaturesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4AB07327AE149C003EFFBD /* TabBarFeaturesCoordinator.swift */; };
 		EB4AB07827AE18D1003EFFBD /* BoxSettings in Frameworks */ = {isa = PBXBuildFile; productRef = EB4AB07727AE18D1003EFFBD /* BoxSettings */; };
 		EB4AB07A27AE18D1003EFFBD /* Inbox in Frameworks */ = {isa = PBXBuildFile; productRef = EB4AB07927AE18D1003EFFBD /* Inbox */; };
@@ -20,11 +19,10 @@
 		EB4AB08427AE18DF003EFFBD /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = EB4AB08327AE18DF003EFFBD /* Settings */; };
 		EB4AB08627AE18DF003EFFBD /* Share in Frameworks */ = {isa = PBXBuildFile; productRef = EB4AB08527AE18DF003EFFBD /* Share */; };
 		EB4AB08927AE1D3B003EFFBD /* Recipe in Frameworks */ = {isa = PBXBuildFile; productRef = EB4AB08827AE1D3B003EFFBD /* Recipe */; };
-		EB5B0C7627B139E6004113AA /* AppCoordinator+CoordinatorDismissDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B0C7527B139E6004113AA /* AppCoordinator+CoordinatorDismissDelegate.swift */; };
 		EB5B0C7927B13BA9004113AA /* Shared in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0C7827B13BA9004113AA /* Shared */; };
-		EB5B0C7B27B13BF9004113AA /* AlertPresenting in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0C7A27B13BF9004113AA /* AlertPresenting */; };
+		EB5B0C7B27B13BF9004113AA /* AlertPresentable in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0C7A27B13BF9004113AA /* AlertPresentable */; };
 		EB5B0C7D27B13C8A004113AA /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = EB5B0C7C27B13C8A004113AA /* Shared */; };
-		EB5B0C7F27B13C93004113AA /* AlertPresenting in Frameworks */ = {isa = PBXBuildFile; productRef = EB5B0C7E27B13C93004113AA /* AlertPresenting */; };
+		EB5B0C7F27B13C93004113AA /* AlertPresentable in Frameworks */ = {isa = PBXBuildFile; productRef = EB5B0C7E27B13C93004113AA /* AlertPresentable */; };
 		EB759E5427AEAC4A00077539 /* TabBarFeaturesCoordinator+BoxSettingsCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB759E5327AEAC4900077539 /* TabBarFeaturesCoordinator+BoxSettingsCoordinatorDelegate.swift */; };
 		EB759E5627AEAD1600077539 /* TabBarFeaturesCoordinator+HomeCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB759E5527AEAD1600077539 /* TabBarFeaturesCoordinator+HomeCoordinatorDelegate.swift */; };
 		EB759E5827AEAE6A00077539 /* TabBarFeaturesCoordinator+MyMenuCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB759E5727AEAE6A00077539 /* TabBarFeaturesCoordinator+MyMenuCoordinatorDelegate.swift */; };
@@ -34,13 +32,13 @@
 		EB759E6027AEB2B300077539 /* TabBarFeaturesCoordinator+ShareCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB759E5F27AEB2B300077539 /* TabBarFeaturesCoordinator+ShareCoordinatorDelegate.swift */; };
 		EB759E6227AEB32D00077539 /* TabBarFeaturesCoordinator+DiscoverCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB759E6127AEB32D00077539 /* TabBarFeaturesCoordinator+DiscoverCoordinatorDelegate.swift */; };
 		EB759E6427AEB3B700077539 /* TabBarFeaturesCoordinator+NewsCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB759E6327AEB3B700077539 /* TabBarFeaturesCoordinator+NewsCoordinatorDelegate.swift */; };
-		EB9996FA27B0ECFF0040B635 /* SceneDelegate+AppCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9996F927B0ECFF0040B635 /* SceneDelegate+AppCoordinatorDelegate.swift */; };
+		EB9996FA27B0ECFF0040B635 /* AppSceneDelegate+AppCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9996F927B0ECFF0040B635 /* AppSceneDelegate+AppCoordinatorDelegate.swift */; };
 		EBC8277C27AEC78B00B61C22 /* AppCoordinator+AuthenticationCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8277B27AEC78B00B61C22 /* AppCoordinator+AuthenticationCoordinatorDelegate.swift */; };
 		EBC8277E27AEC7E900B61C22 /* AppCoordinator+TabBarFeaturesCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8277D27AEC7E900B61C22 /* AppCoordinator+TabBarFeaturesCoordinatorDelegate.swift */; };
 		EBDA81E727B10FA200E936A2 /* TabBarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDA81E627B10FA200E936A2 /* TabBarFeature.swift */; };
 		EBDA81E927B10FAB00E936A2 /* TabFeatureProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDA81E827B10FAB00E936A2 /* TabFeatureProviding.swift */; };
 		EBFEA75627AD7A1500E9AB2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFEA75527AD7A1500E9AB2F /* AppDelegate.swift */; };
-		EBFEA75827AD7A1500E9AB2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFEA75727AD7A1500E9AB2F /* SceneDelegate.swift */; };
+		EBFEA75827AD7A1500E9AB2F /* AppSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFEA75727AD7A1500E9AB2F /* AppSceneDelegate.swift */; };
 		EBFEA75F27AD7A1600E9AB2F /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBFEA75E27AD7A1600E9AB2F /* AppIcon.xcassets */; };
 		EBFEA76227AD7A1600E9AB2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBFEA76027AD7A1600E9AB2F /* LaunchScreen.storyboard */; };
 		EBFEA76E27AD820500E9AB2F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFEA76D27AD820500E9AB2F /* AppCoordinator.swift */; };
@@ -49,14 +47,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EB1C811527B1752A00147E1B /* Coordinator */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Coordinator; path = ../../Coordinator; sourceTree = "<group>"; };
 		EB1C811627B1783500147E1B /* ToastPresenting */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ToastPresenting; sourceTree = "<group>"; };
-		EB2ED53827AEFDC50097BA4D /* TabBarFeaturesCoordinator+CoordinatorDismissDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarFeaturesCoordinator+CoordinatorDismissDelegate.swift"; sourceTree = "<group>"; };
+		EB25DD5027B6CD6800581319 /* Coordinator */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Coordinator; path = ../../Coordinator; sourceTree = "<group>"; };
 		EB4AB07327AE149C003EFFBD /* TabBarFeaturesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarFeaturesCoordinator.swift; sourceTree = "<group>"; };
 		EB4AB08727AE1CF9003EFFBD /* Recipe */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Recipe; sourceTree = "<group>"; };
-		EB5B0C7527B139E6004113AA /* AppCoordinator+CoordinatorDismissDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+CoordinatorDismissDelegate.swift"; sourceTree = "<group>"; };
 		EB5B0C7827B13BA9004113AA /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
-		EB5B0C7A27B13BF9004113AA /* AlertPresenting */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AlertPresenting; sourceTree = "<group>"; };
+		EB5B0C7A27B13BF9004113AA /* AlertPresentable */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AlertPresentable; sourceTree = "<group>"; };
 		EB61E37B27ADC3450040C65A /* News */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = News; sourceTree = "<group>"; };
 		EB759E5327AEAC4900077539 /* TabBarFeaturesCoordinator+BoxSettingsCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarFeaturesCoordinator+BoxSettingsCoordinatorDelegate.swift"; sourceTree = "<group>"; };
 		EB759E5527AEAD1600077539 /* TabBarFeaturesCoordinator+HomeCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarFeaturesCoordinator+HomeCoordinatorDelegate.swift"; sourceTree = "<group>"; };
@@ -67,7 +63,7 @@
 		EB759E5F27AEB2B300077539 /* TabBarFeaturesCoordinator+ShareCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarFeaturesCoordinator+ShareCoordinatorDelegate.swift"; sourceTree = "<group>"; };
 		EB759E6127AEB32D00077539 /* TabBarFeaturesCoordinator+DiscoverCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarFeaturesCoordinator+DiscoverCoordinatorDelegate.swift"; sourceTree = "<group>"; };
 		EB759E6327AEB3B700077539 /* TabBarFeaturesCoordinator+NewsCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarFeaturesCoordinator+NewsCoordinatorDelegate.swift"; sourceTree = "<group>"; };
-		EB9996F927B0ECFF0040B635 /* SceneDelegate+AppCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneDelegate+AppCoordinatorDelegate.swift"; sourceTree = "<group>"; };
+		EB9996F927B0ECFF0040B635 /* AppSceneDelegate+AppCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppSceneDelegate+AppCoordinatorDelegate.swift"; sourceTree = "<group>"; };
 		EBC8277B27AEC78B00B61C22 /* AppCoordinator+AuthenticationCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+AuthenticationCoordinatorDelegate.swift"; sourceTree = "<group>"; };
 		EBC8277D27AEC7E900B61C22 /* AppCoordinator+TabBarFeaturesCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+TabBarFeaturesCoordinatorDelegate.swift"; sourceTree = "<group>"; };
 		EBCFF50F27ADBA77005B7AB7 /* MyMenu */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MyMenu; sourceTree = "<group>"; };
@@ -79,7 +75,7 @@
 		EBDA81E827B10FAB00E936A2 /* TabFeatureProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFeatureProviding.swift; sourceTree = "<group>"; };
 		EBFEA75227AD7A1500E9AB2F /* ModularizationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModularizationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFEA75527AD7A1500E9AB2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EBFEA75727AD7A1500E9AB2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EBFEA75727AD7A1500E9AB2F /* AppSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSceneDelegate.swift; sourceTree = "<group>"; };
 		EBFEA75E27AD7A1600E9AB2F /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		EBFEA76127AD7A1600E9AB2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBFEA76327AD7A1700E9AB2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,7 +92,7 @@
 			files = (
 				EB4AB07827AE18D1003EFFBD /* BoxSettings in Frameworks */,
 				EB4AB08927AE1D3B003EFFBD /* Recipe in Frameworks */,
-				EB5B0C7F27B13C93004113AA /* AlertPresenting in Frameworks */,
+				EB5B0C7F27B13C93004113AA /* AlertPresentable in Frameworks */,
 				EB1C811927B1783E00147E1B /* ToastPresenting in Frameworks */,
 				EB4AB08227AE18DF003EFFBD /* News in Frameworks */,
 				EB4AB07C27AE18DF003EFFBD /* Discover in Frameworks */,
@@ -126,10 +122,12 @@
 		EB4AB07527AE14A5003EFFBD /* App */ = {
 			isa = PBXGroup;
 			children = (
+				EBFEA76D27AD820500E9AB2F /* AppCoordinator.swift */,
+				EBC8277B27AEC78B00B61C22 /* AppCoordinator+AuthenticationCoordinatorDelegate.swift */,
+				EBC8277D27AEC7E900B61C22 /* AppCoordinator+TabBarFeaturesCoordinatorDelegate.swift */,
 				EBFEA75527AD7A1500E9AB2F /* AppDelegate.swift */,
-				EBFEA75727AD7A1500E9AB2F /* SceneDelegate.swift */,
-				EB9996F927B0ECFF0040B635 /* SceneDelegate+AppCoordinatorDelegate.swift */,
-				EBDA81ED27B1100C00E936A2 /* Coordinators */,
+				EBFEA75727AD7A1500E9AB2F /* AppSceneDelegate.swift */,
+				EB9996F927B0ECFF0040B635 /* AppSceneDelegate+AppCoordinatorDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -145,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				EB1C811627B1783500147E1B /* ToastPresenting */,
-				EB5B0C7A27B13BF9004113AA /* AlertPresenting */,
+				EB5B0C7A27B13BF9004113AA /* AlertPresentable */,
 				EB5B0C7827B13BA9004113AA /* Shared */,
 			);
 			path = Support;
@@ -154,9 +152,18 @@
 		EB759E6527AEB3DE00077539 /* TabBarFeatures */ = {
 			isa = PBXGroup;
 			children = (
-				EBDA81EC27B10FFF00E936A2 /* Enums */,
-				EBDA81EB27B10FFA00E936A2 /* Protocols */,
-				EBDA81EA27B10FF200E936A2 /* Coordinators */,
+				EBDA81E627B10FA200E936A2 /* TabBarFeature.swift */,
+				EB4AB07327AE149C003EFFBD /* TabBarFeaturesCoordinator.swift */,
+				EB759E5327AEAC4900077539 /* TabBarFeaturesCoordinator+BoxSettingsCoordinatorDelegate.swift */,
+				EB759E6127AEB32D00077539 /* TabBarFeaturesCoordinator+DiscoverCoordinatorDelegate.swift */,
+				EB759E5527AEAD1600077539 /* TabBarFeaturesCoordinator+HomeCoordinatorDelegate.swift */,
+				EB759E5D27AEB1F100077539 /* TabBarFeaturesCoordinator+InboxCoordinatorDelegate.swift */,
+				EB759E5727AEAE6A00077539 /* TabBarFeaturesCoordinator+MyMenuCoordinatorDelegate.swift */,
+				EB759E6327AEB3B700077539 /* TabBarFeaturesCoordinator+NewsCoordinatorDelegate.swift */,
+				EB759E5B27AEAFDB00077539 /* TabBarFeaturesCoordinator+RecipeCoordinatorDelegate.swift */,
+				EB759E5927AEAF4B00077539 /* TabBarFeaturesCoordinator+SettingsCoordinatorDelegate.swift */,
+				EB759E5F27AEB2B300077539 /* TabBarFeaturesCoordinator+ShareCoordinatorDelegate.swift */,
+				EBDA81E827B10FAB00E936A2 /* TabFeatureProviding.swift */,
 			);
 			path = TabBarFeatures;
 			sourceTree = "<group>";
@@ -170,56 +177,11 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
-		EBDA81EA27B10FF200E936A2 /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-				EB4AB07327AE149C003EFFBD /* TabBarFeaturesCoordinator.swift */,
-				EB759E5327AEAC4900077539 /* TabBarFeaturesCoordinator+BoxSettingsCoordinatorDelegate.swift */,
-				EB2ED53827AEFDC50097BA4D /* TabBarFeaturesCoordinator+CoordinatorDismissDelegate.swift */,
-				EB759E6127AEB32D00077539 /* TabBarFeaturesCoordinator+DiscoverCoordinatorDelegate.swift */,
-				EB759E5527AEAD1600077539 /* TabBarFeaturesCoordinator+HomeCoordinatorDelegate.swift */,
-				EB759E5D27AEB1F100077539 /* TabBarFeaturesCoordinator+InboxCoordinatorDelegate.swift */,
-				EB759E5727AEAE6A00077539 /* TabBarFeaturesCoordinator+MyMenuCoordinatorDelegate.swift */,
-				EB759E6327AEB3B700077539 /* TabBarFeaturesCoordinator+NewsCoordinatorDelegate.swift */,
-				EB759E5B27AEAFDB00077539 /* TabBarFeaturesCoordinator+RecipeCoordinatorDelegate.swift */,
-				EB759E5927AEAF4B00077539 /* TabBarFeaturesCoordinator+SettingsCoordinatorDelegate.swift */,
-				EB759E5F27AEB2B300077539 /* TabBarFeaturesCoordinator+ShareCoordinatorDelegate.swift */,
-			);
-			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		EBDA81EB27B10FFA00E936A2 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				EBDA81E827B10FAB00E936A2 /* TabFeatureProviding.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		EBDA81EC27B10FFF00E936A2 /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				EBDA81E627B10FA200E936A2 /* TabBarFeature.swift */,
-			);
-			path = Enums;
-			sourceTree = "<group>";
-		};
-		EBDA81ED27B1100C00E936A2 /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-				EBFEA76D27AD820500E9AB2F /* AppCoordinator.swift */,
-				EBC8277B27AEC78B00B61C22 /* AppCoordinator+AuthenticationCoordinatorDelegate.swift */,
-				EB5B0C7527B139E6004113AA /* AppCoordinator+CoordinatorDismissDelegate.swift */,
-				EBC8277D27AEC7E900B61C22 /* AppCoordinator+TabBarFeaturesCoordinatorDelegate.swift */,
-			);
-			path = Coordinators;
-			sourceTree = "<group>";
-		};
 		EBFB8C7227AF303000E20C85 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				EB4AB07527AE14A5003EFFBD /* App */,
 				EB44728527B113E100985C79 /* Assets */,
+				EB4AB07527AE14A5003EFFBD /* App */,
 				EB759E6527AEB3DE00077539 /* TabBarFeatures */,
 			);
 			path = Main;
@@ -228,7 +190,7 @@
 		EBFEA74927AD7A1500E9AB2F = {
 			isa = PBXGroup;
 			children = (
-				EB1C811527B1752A00147E1B /* Coordinator */,
+				EB25DD5027B6CD6800581319 /* Coordinator */,
 				EBFEA75427AD7A1500E9AB2F /* ModularizationExample */,
 				EB759E6627AEB41100077539 /* Packages */,
 				EBFEA75327AD7A1500E9AB2F /* Products */,
@@ -298,7 +260,7 @@
 				EB4AB08527AE18DF003EFFBD /* Share */,
 				EB4AB08827AE1D3B003EFFBD /* Recipe */,
 				EB5B0C7C27B13C8A004113AA /* Shared */,
-				EB5B0C7E27B13C93004113AA /* AlertPresenting */,
+				EB5B0C7E27B13C93004113AA /* AlertPresentable */,
 				EB1C811827B1783E00147E1B /* ToastPresenting */,
 			);
 			productName = ModularizationExample;
@@ -350,7 +312,7 @@
 				EB5B0C7927B13BA9004113AA /* Shared in Resources */,
 				EBFEA75F27AD7A1600E9AB2F /* AppIcon.xcassets in Resources */,
 				EBFEA78427ADB2A700E9AB2F /* Home in Resources */,
-				EB5B0C7B27B13BF9004113AA /* AlertPresenting in Resources */,
+				EB5B0C7B27B13BF9004113AA /* AlertPresentable in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,12 +346,11 @@
 			files = (
 				EBDA81E727B10FA200E936A2 /* TabBarFeature.swift in Sources */,
 				EBFEA76E27AD820500E9AB2F /* AppCoordinator.swift in Sources */,
-				EB5B0C7627B139E6004113AA /* AppCoordinator+CoordinatorDismissDelegate.swift in Sources */,
 				EB759E5A27AEAF4B00077539 /* TabBarFeaturesCoordinator+SettingsCoordinatorDelegate.swift in Sources */,
 				EB759E5427AEAC4A00077539 /* TabBarFeaturesCoordinator+BoxSettingsCoordinatorDelegate.swift in Sources */,
 				EB759E5C27AEAFDB00077539 /* TabBarFeaturesCoordinator+RecipeCoordinatorDelegate.swift in Sources */,
 				EB759E5827AEAE6A00077539 /* TabBarFeaturesCoordinator+MyMenuCoordinatorDelegate.swift in Sources */,
-				EB9996FA27B0ECFF0040B635 /* SceneDelegate+AppCoordinatorDelegate.swift in Sources */,
+				EB9996FA27B0ECFF0040B635 /* AppSceneDelegate+AppCoordinatorDelegate.swift in Sources */,
 				EBFEA75627AD7A1500E9AB2F /* AppDelegate.swift in Sources */,
 				EB759E5E27AEB1F100077539 /* TabBarFeaturesCoordinator+InboxCoordinatorDelegate.swift in Sources */,
 				EBDA81E927B10FAB00E936A2 /* TabFeatureProviding.swift in Sources */,
@@ -397,8 +358,7 @@
 				EB759E6227AEB32D00077539 /* TabBarFeaturesCoordinator+DiscoverCoordinatorDelegate.swift in Sources */,
 				EB4AB07427AE149C003EFFBD /* TabBarFeaturesCoordinator.swift in Sources */,
 				EBC8277C27AEC78B00B61C22 /* AppCoordinator+AuthenticationCoordinatorDelegate.swift in Sources */,
-				EBFEA75827AD7A1500E9AB2F /* SceneDelegate.swift in Sources */,
-				EB2ED53927AEFDC60097BA4D /* TabBarFeaturesCoordinator+CoordinatorDismissDelegate.swift in Sources */,
+				EBFEA75827AD7A1500E9AB2F /* AppSceneDelegate.swift in Sources */,
 				EB759E6427AEB3B700077539 /* TabBarFeaturesCoordinator+NewsCoordinatorDelegate.swift in Sources */,
 				EBC8277E27AEC7E900B61C22 /* AppCoordinator+TabBarFeaturesCoordinatorDelegate.swift in Sources */,
 				EB759E6027AEB2B300077539 /* TabBarFeaturesCoordinator+ShareCoordinatorDelegate.swift in Sources */,
@@ -544,6 +504,7 @@
 				DEVELOPMENT_TEAM = 9U37VDVBP4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ModularizationExample/Main/Assets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Modularize;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -570,6 +531,7 @@
 				DEVELOPMENT_TEAM = 9U37VDVBP4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ModularizationExample/Main/Assets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Modularize;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -655,9 +617,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Shared;
 		};
-		EB5B0C7E27B13C93004113AA /* AlertPresenting */ = {
+		EB5B0C7E27B13C93004113AA /* AlertPresentable */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = AlertPresenting;
+			productName = AlertPresentable;
 		};
 		EBFEA78B27ADB76500E9AB2F /* Authentication */ = {
 			isa = XCSwiftPackageProductDependency;
